@@ -10,16 +10,12 @@ public class WorkshopSnapshot implements Serializable {
     private String event_name, event_name_quote, event_name_description, event_rules_description, event_team_distribution, event_fees, event_contact;
 
     WorkshopSnapshot(String event_name, String event_name_quote, String event_name_description, String event_fees, int imageView, String contact1, String contact2) {
-//        this.map=map;
         this.contact1 = contact1;
         this.contact2 = contact2;
         this.event_name = event_name;
         this.event_name_quote = event_name_quote;
         this.event_name_description = event_name_description;
-//        this.event_rules_description = event_rules_description;
-//        this.event_team_distribution = event_team_distribution;
         this.event_fees = event_fees;
-        //this.event_contact = event_contact;
         this.imageView = imageView;
     }
 

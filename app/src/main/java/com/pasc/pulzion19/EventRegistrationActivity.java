@@ -149,14 +149,12 @@ public class EventRegistrationActivity extends AppCompatActivity
 
 
 
-        //paytm=findViewById(R.id.paytmImage);
 
 
         FirebaseApp.initializeApp(EventRegistrationActivity.this);
         db = FirebaseFirestore.getInstance();
         par1 = findViewById(R.id.participant1);
         par2 = findViewById(R.id.participant2);
-        //vol =  findViewById(R.id.volunteer);
         mail = findViewById(R.id.email);
         contact = findViewById(R.id.contact);
         collegeName = findViewById(R.id.college);
@@ -175,7 +173,6 @@ public class EventRegistrationActivity extends AppCompatActivity
 
         fcost = findViewById(R.id.amount);
 
-        // documentReference=db.collection("TempData").document("Temp1");
         collectionReference = db.collection("Combined");
         crbugOff = db.collection("BugOff");
         crcodeBuddy = db.collection("Code_Buddy");
@@ -280,21 +277,7 @@ public class EventRegistrationActivity extends AppCompatActivity
 
 
 
-//                            if (password.getText().toString().equals("pasc")) {
-                            //Toast.makeText(EventRegistrationActivity.this, "User Registered into Database Successfully", Toast.LENGTH_SHORT).show();
 
-//                            ProgressBar progressBar = (ProgressBar)findViewById(R.id.spin_kit);
-//                            Sprite doubleBounce = new DoubleBounce();
-//                            progressBar.setIndeterminateDrawable(doubleBounce);
-//                            //startActivity(new Intent(EventRegistrationActivity.this,EventRegistrationActivity.class));
-//                                finish();
-//                                startActivity(getIntent());
-
-
-//                                Intent intent = new Intent(getBaseContext(), qrCode.class);
-//                                intent.putExtra("qrId", rnd);
-//
-//                                startActivity(intent);
 
                         }
                         //koko d
@@ -317,9 +300,7 @@ public class EventRegistrationActivity extends AppCompatActivity
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
-////                String s="";
-//                 String s= data != null ? data.getStringExtra("TXN_STATUS") : null;
-//                assert s != null;
+
                 int s=data.getIntExtra("TXN_STATUS",1);
                 if(s==1)
                 {

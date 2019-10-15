@@ -106,7 +106,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/gaurav" />
+                    app:srcCompat="@drawable/utkarsh" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -122,7 +122,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Gaurav Deshpande"
+                        android:text="Utkarsh Bhure"
                         android:textColor="@color/black"
                         android:textSize="23sp"
                         android:textStyle="bold" />
@@ -161,7 +161,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/pratik" />
+                    app:srcCompat="@drawable/narsing" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -177,7 +177,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Pratik Patil"
+                        android:text="Narsing Sarda"
                         android:textColor="@color/black"
                         android:textSize="23sp"
                         android:textStyle="bold" />

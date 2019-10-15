@@ -73,21 +73,17 @@ public class WorkshopDetails extends AppCompatActivity implements Serializable, 
             temp.setImageView(temp.getImageView());
         event_description = findViewById(R.id.eventDescription);
         quote = findViewById(R.id.textView1);
-//        event_rules=findViewById(R.id.rules);
-//        team_distribution=findViewById(R.id.team_distribution);
         fees = findViewById(R.id.fees);
         contact1 = findViewById(R.id.contact1);
         contact2 = findViewById(R.id.contact2);
         imageView = findViewById(R.id.eventImage);
         Glide.with(this).load(getResources().getDrawable(temp.getImageView())).into(imageView);
-        //imageView.setImageResource(temp.getImageView());
         event_name.setText(temp.getEvent_name());
         String s1;
         if (temp.getEvent_name().equals("Cerebro"))
             s1 = temp.getEvent_name_description();
         else {
             s1 = temp.getEvent_name_description();
-            //s2.replaceAll("\\n", "\n");
             if (s1 != null)
                 if (s1.contains("\\n")) {
                     s1 = s1.replace("\\n", "\n");
@@ -100,35 +96,12 @@ public class WorkshopDetails extends AppCompatActivity implements Serializable, 
             s2 = temp.getEvent_name_description();
         else {
             s2 = temp.getEvent_rules_description();
-            //s2.replaceAll("\\n", "\n");
             if (s2 != null)
                 if (s2.contains("\\n")) {
                     s2 = s2.replace("\\n", "\n");
                 }
         }
 
-//        event_rules.setText(s2);
-
-//        String s3;
-//        s3=temp.getEvent_team_distribution();
-//        //s2.replaceAll("\\n", "\n");
-//        if(s3!=null)
-//            if(s3.contains("\\n"))
-//            {
-//                s3=s3.replace("\\n","\n");
-//            }
-         /*ObjectAnimator anim = ObjectAnimator.ofFloat(imageView, "ScaleY", 0, 1);
-        anim.setDuration(1000);
-        anim.start();*/
-//        ObjectAnimator anim = ObjectAnimator.ofFloat(imageView, "Alpha", 0, 1);
-//        anim.setRepeatMode(ObjectAnimator.REVERSE);
-//        anim.setRepeatCount(ObjectAnimator.RESTART);
-//        anim.setDuration(700);
-//        anim.start();
-
-       /* Animation animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
-        imageView.startAnimation(animation);*/
-//        team_distribution.setText(s3);
         fees.setText(temp.getEvent_fees());
         String con1 = "", con2 = "";
         int n1, n2;
@@ -157,7 +130,6 @@ public class WorkshopDetails extends AppCompatActivity implements Serializable, 
         for (int i = cursor2; i < n2; i++)
             final2.append(temp.contact2.charAt(i));
 
-        //TextView textView = (TextView) view.findViewById(R.id.textview);
         SpannableString content = new SpannableString(final1);
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
         String str1 = temp1.toString() + content;
@@ -168,9 +140,6 @@ public class WorkshopDetails extends AppCompatActivity implements Serializable, 
         String str2 = temp2.toString() + content2;
         contact2.setText(str2);
 
-//
-//        contact1.setText(temp.contact1);
-//        contact2.setText(temp.contact2);
         contact1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

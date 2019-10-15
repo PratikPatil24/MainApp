@@ -83,21 +83,21 @@ public class MainActivity extends AppCompatActivity
         instabutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String insta = "https://www.instagram.com/acm.pict/?hl=en";
+                String insta = "https://www.instagram.com";
                 openSite(insta);
             }
         });
         fbbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String fb = "https://www.facebook.com/acmpict/";
+                String fb = "https://www.facebook.com";
                 openSite(fb);
             }
         });
         wwwbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String web = "https://pict.acm.org/pulzion19";
+                String web = "https://pict.edu";
                 openSite(web);
             }
         });
@@ -144,7 +144,8 @@ public class MainActivity extends AppCompatActivity
                 case R.id.share1:
                     Intent intent = new Intent(android.content.Intent.ACTION_SEND);
                     intent.setType("text/plain");
-                    String link = "https://play.google.com/store/apps/details?id=com.pasc.pulzion19";
+//                    String link = "https://play.google.com/store/apps/details?id=com.pasc.pulzion19";
+                    String link = "App Link";
                     intent.putExtra(android.content.Intent.EXTRA_TEXT, link);
                     startActivity(Intent.createChooser(intent, "Share via"));
                     return true;

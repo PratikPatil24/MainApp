@@ -32,11 +32,12 @@ public class checksum extends AppCompatActivity implements PaytmPaymentTransacti
         Intent intent = getIntent();
         orderId = intent.getExtras().getString("orderid");
         custid = intent.getExtras().getString("custid");
-        temp = intent.getIntExtra("final_amount", 0);
+//        temp = intent.getIntExtra("final_amount", 0);
+        temp = 1;
         mid = "axESEi44386194598879"; /// your merchant id
         sendUserDetailTOServerdd dl = new sendUserDetailTOServerdd();
         dl.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-// vollye , retrofit, asynch
+        // vollye , retrofit, asynch
     }
     public class sendUserDetailTOServerdd extends AsyncTask<ArrayList<String>, Void, String> {
         private ProgressDialog dialog = new ProgressDialog(checksum.this);
@@ -91,7 +92,7 @@ public class checksum extends AppCompatActivity implements PaytmPaymentTransacti
             paramMap.put("ORDER_ID", orderId);
             paramMap.put("CUST_ID", custid);
             paramMap.put("CHANNEL_ID", "WAP");
-            paramMap.put("TXN_AMOUNT", String.valueOf(temp));
+            paramMap.put("TXN_AMOUNT", String.valueOf(temp));//String.valueOf(temp)
             paramMap.put("WEBSITE", "PRODUCTION");
             paramMap.put("CALLBACK_URL", verifyurl);
             //paramMap.put( "EMAIL" , "abc@gmail.com");   // no need
@@ -131,9 +132,20 @@ public class checksum extends AppCompatActivity implements PaytmPaymentTransacti
                 }
 
                 public void clientAuthenticationFailed(String inErrorMessage) {
+                    Toast.makeText(checksum.this, "Client Authentication  Failed", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(checksum.this, EventRegistrationActivity.class);
+                    i.putExtra("TXN_RESPONSE", "TXN_FAILURE");
+                    setResult(RESULT_OK, i);
+                    finish();
+
                 }
 
                 public void onErrorLoadingWebPage(int iniErrorCode, String inErrorMessage, String inFailingUrl) {
+                    Toast.makeText(checksum.this, "Error Loading Webpage", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(checksum.this, EventRegistrationActivity.class);
+                    i.putExtra("TXN_RESPONSE", "TXN_FAILURE");
+                    setResult(RESULT_OK, i);
+                    finish();
                 }
 
                 public void onBackPressedCancelTransaction() {
@@ -148,6 +160,11 @@ public class checksum extends AppCompatActivity implements PaytmPaymentTransacti
                 }
 
                 public void onTransactionCancel(String inErrorMessage, Bundle inResponse) {
+                    Toast.makeText(checksum.this, "Transaction Cancelled", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(checksum.this, EventRegistrationActivity.class);
+                    i.putExtra("TXN_RESPONSE", "TXN_FAILURE");
+                    setResult(RESULT_OK, i);
+                    finish();
 //                    Intent i=new Intent();
 //
                 }

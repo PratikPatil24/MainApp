@@ -144,11 +144,7 @@ public class Receipts extends AppCompatActivity
         }
 
 
-//        model_classList.add(new model_class("1","2","3","4"));
 
-//        adapter adaper=new adapter(model_classList);
-//        recyclerView.setAdapter(adaper);
-//        adaper.notifyDataSetChanged();
 
         fab_plus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -177,12 +173,7 @@ public class Receipts extends AppCompatActivity
             }
         });
 //
-//        t1=this.findViewById(R.id.partName);
-//        t2=this.findViewById(R.id.partContact);
-//        t3=this.findViewById(R.id.mailId);
-//        t4=this.findViewById(R.id.amountPaid);
-//        t5=this.findViewById(R.id.id);
-//        l=this.findViewById(R.id.linearLayout);
+
 
         DrawerLayout drawer = this.findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -259,11 +250,7 @@ public class Receipts extends AppCompatActivity
                                                     cost[0] =String.valueOf(d.get("cost"));
 //                                                    mail[0] =d.getString("mail");
                                                     mail[0] = d.get("events").toString().replaceAll("_", " ");
-//                                                    t1.setText(name[0]);
-//                                                    t2.setText(contact[0]);
-//                                                    t3.setText(mail[0]);
-//                                                    t4.setText(cost[0]);
-//                                                    t5.setText(d.getString("id"));
+
 
                                                     model_classList.add(new model_class(name[0],contact[0],cost[0],mail[0]));
 
@@ -326,26 +313,6 @@ public class Receipts extends AppCompatActivity
         recyclerView.setAdapter(adapter);
     }
 
-
-    //    void saveData()
-//    {
-//        SharedPreferences sharedPreferences=getSharedPreferences("shared preferences",MODE_PRIVATE);
-//        SharedPreferences.Editor editor=sharedPreferences.edit();
-//        Gson gson=new Gson();
-//        String json=gson.toJson(model_classList);
-//        editor.putString("task list",json);
-//        editor.apply();
-//    }
-//    void loadData()
-//    {
-//        SharedPreferences sharedPreferences=getSharedPreferences("shared preferences",MODE_PRIVATE);
-//        Gson gson=new Gson();
-//        String json=sharedPreferences.getString("task list",null);
-//        Type type=new TypeToken<ArrayList<model_class>>(){}.getType();
-//        model_classList=gson.fromJson(json,type);
-//        if(model_classList==null)
-//            model_classList=new ArrayList<>();
-//    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         final IntentResult result =IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
@@ -390,11 +357,7 @@ public class Receipts extends AppCompatActivity
                                             contact1[0] = d1.getString("id");
                                             cost1[0] =String.valueOf(d1.get("cost"));
                                             mail1[0] = d1.get("events").toString().replaceAll("_", " ");
-//                                            t1.setText(name1[0]);
-//                                            t2.setText(contact1[0]);
-//                                            t3.setText(mail1[0]);
-//                                            t4.setText(cost1[0]);
-//                                            t5.setText(d1.getString("id"));
+
                                             model_classList.add(new model_class(name1[0],contact1[0],cost1[0],mail1[0]));
 
                                             recyclerView.setAdapter(adapter);
@@ -432,11 +395,7 @@ public class Receipts extends AppCompatActivity
                                                 contact1[0] = d1.getString("id");
                                                 cost1[0] = String.valueOf((long) d1.get("cost") - (long) d1.get("pending"));
                                                 mail1[0] = d1.get("events").toString().replaceAll("_", " ");
-//                                            t1.setText(name1[0]);
-//                                            t2.setText(contact1[0]);
-//                                            t3.setText(mail1[0]);
-//                                            t4.setText(cost1[0]);
-//                                            t5.setText(d1.getString("id"));
+
                                                 model_classList.add(new model_class(name1[0], contact1[0], cost1[0], mail1[0]));
 
                                                 recyclerView.setAdapter(adapter);

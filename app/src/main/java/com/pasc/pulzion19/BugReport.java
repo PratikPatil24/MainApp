@@ -58,7 +58,7 @@ public class BugReport extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                        "mailto", "gauravdesh26@gmail.com", null));
+                        "mailto", "bhureutkarsh@gmail.com", null));
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "");
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "");
                 startActivity(Intent.createChooser(emailIntent, "Send email..."));
@@ -68,7 +68,7 @@ public class BugReport extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                        "mailto", "patilgpratik@gmail.com", null));
+                        "mailto", "narsingsarda333@gmail.com", null));
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "");
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "");
                 startActivity(Intent.createChooser(emailIntent, "Send email..."));
